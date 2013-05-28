@@ -13,6 +13,16 @@
     {{ HTML::script('js/bootstrap/bootstrap.min.js') }}
     {{ HTML::script('js/bootstrap/bootstrap-formhelpers-datepicker.js') }}
     {{ HTML::script('js/bootstrap/bootstrap-formhelpers-datepicker.ja_JP.js') }}
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-37364818-2', 'think-sv.net');
+        ga('send', 'pageview');
+
+    </script>
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -24,7 +34,6 @@
 </div>
 @yield('content')
 <div id="footer">
-    <p class="center">本サービスを利用して発生したいかなる責任も開発者は負いません</p>
     <div class="center">Powerd by Laravel {{ $version }}</div>
     <p class="center">Copyright &copy;  {{ $year }} {{ HTML::link('http://www.think-sv.net/blog/',$author) }}</p>
 </div>
