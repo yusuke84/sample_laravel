@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{{ $title }}</title>
     <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="ATNDさーち,ATNDサーチ,ATND,イベント検索">
+    <meta name="description" content="ATNDのイベントを検索するサービスです。Laravel3で実装されています。">
     {{ HTML::style('css/style.css') }}
     {{ HTML::style('css/bootstrap/bootstrap.min.css') }}
     {{ HTML::style('css/bootstrap/bootstrap-formhelpers.css') }}
