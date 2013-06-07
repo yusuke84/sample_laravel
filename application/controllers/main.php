@@ -26,16 +26,19 @@ class Main_Controller extends Base_Controller {
             $param2 = '';
             $param3 = '';
 
-            $input['area'] != '' ? $param1 = $input['keyword'].','.$input['area'] : $param1 = $input['keyword'];
+            $keyword = str_replace(' ',',',$input['keyword']);
+
+            $input['area'] != '' ? $param1 = $keyword.','.$input['area'] : $param1 = $keyword;
             strlen($input['date']) == 6 ? $param2 = $input['date'] : $param3 = $input['date'];
             Log::write('url','http://api.atnd.org/events/?keyword_or='.$param1.'&ym='.$param2.'&ymd='.$param3.'&format=json');
-
-            $curl = New Curl();
-            $resultAtnd = json_decode($curl->simple_get('http://api.atnd.org/events/?keyword='.$param1.'&ym='.$param2.'&ymd='.$param3.'&format=json'));
+            New Curl();
+            $curl =
+            $resultAtnd = json_decode($curl->simple_get('http://api.atnd.org/events/?keyword='.$param1.'&ym='.$param2.'&ymd='.$param3.'&format=json'.'&count=100'));
             $contentdata = $this->basedata;
             $contentdata['keyword'] = $input['keyword'];
             $contentdata['area'] = $input['area'];
             $contentdata['date'] = $input['date'];
+
             array_key_exists('nogoback',$input) ? $contentdata['nogoback'] = true : $contentdata['nogoback'] = false;
 
             $resultArray = $resultAtnd->events;

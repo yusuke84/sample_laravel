@@ -8,6 +8,7 @@
                 <div class="control-group {{ $errors->has('keyword') ? 'error' : '' }}">
                     <div class="controls controls-row">
                         {{ Form::text('keyword', $keyword, array('class' => 'input-medium', 'placeholder' => '検索キーワード（必須）') ) }}
+                        <span class="help-inline">hint:半角スペースで複数入力可</span>
                     </div>
                 </div>
                 <div class="control-group {{ $errors->has('area') ? 'error' : '' }}">
@@ -45,7 +46,7 @@
                                 </table>
                             </div>
                         </div>
-                        <span class="help-inline">入力例：20130501 or 201305</span>
+                        <span class="help-inline">hint：20130501 or 201305</span>
                     </div>
                 </div>
                 <div class="control-group {{ $errors->has('area') ? 'error' : '' }}">
